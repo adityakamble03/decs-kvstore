@@ -1,0 +1,23 @@
+# Build artifacts
+build/
+CMakeFiles/
+CMakeCache.txt
+*.o
+*.a
+*.so
+*.out
+
+# Logs
+results_*.log
+*.log
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+
+# Environment
+.env
