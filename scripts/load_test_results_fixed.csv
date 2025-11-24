@@ -1,0 +1,7 @@
+workload,threads,duration_sec,total_requests,successful_requests,failed_requests,success_rate_pct,throughput_rps,avg_response_time_ms
+put_all,1,30,25732,25732,0,100.00,857.73,1.15
+put_all,5,30,177312,177312,0,100.00,5910.40,0.83
+put_all,10,30,344163,344163,0,100.00,11472.10,0.86
+put_all,20,30,355943,355943,0,100.00,11864.77,1.67
+put_all,30,30,364015,364015,0,100.00,12133.83,2.46
+put_all,50,30,365293,365293,0,100.00,12176.43,4.10

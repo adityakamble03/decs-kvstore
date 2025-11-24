@@ -1,0 +1,7 @@
+workload,threads,duration_sec,total_requests,successful_requests,failed_requests,success_rate_pct,throughput_rps,avg_response_time_ms
+get_popular,1,30,20305,20305,0,100.00,676.83,1.46
+get_popular,5,30,102488,102488,0,100.00,3416.27,1.45
+get_popular,10,30,109278,109278,0,100.00,3642.60,2.75
+get_popular,20,30,108079,108079,0,100.00,3602.63,5.58
+get_popular,30,30,108477,108477,0,100.00,3499.26,8.37
+get_popular,50,30,109426,109426,0,100.00,3529.87,13.89
