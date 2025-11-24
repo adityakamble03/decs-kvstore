@@ -20,8 +20,8 @@ print(f"Workloads: {df['workload'].unique()}")
 # Group by workload if multiple workloads exist
 workloads = df['workload'].unique()
 
-# Create figure with 2 subplots only
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))
+# Create figure with subplots
+fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(14, 10))
 fig.suptitle('Load Test Results', fontsize=16)
 
 # Plot each workload
@@ -34,6 +34,14 @@ for workload in workloads:
     
     # Plot 2: Response Time vs Threads
     ax2.plot(df_workload['threads'], df_workload['avg_response_time_ms'], 
+             marker='o', linewidth=2, markersize=8, label=workload)
+    
+    # Plot 3: Success Rate vs Threads
+    ax3.plot(df_workload['threads'], df_workload['success_rate_pct'], 
+             marker='o', linewidth=2, markersize=8, label=workload)
+    
+    # Plot 4: Total Requests vs Threads
+    ax4.plot(df_workload['threads'], df_workload['total_requests'], 
              marker='o', linewidth=2, markersize=8, label=workload)
 
 # Configure axes
@@ -48,6 +56,19 @@ ax2.set_ylabel('Avg Response Time (ms)')
 ax2.set_title('Response Time vs Concurrency')
 ax2.grid(True, alpha=0.3)
 ax2.legend()
+
+ax3.set_xlabel('Number of Threads')
+ax3.set_ylabel('Success Rate (%)')
+ax3.set_title('Success Rate vs Concurrency')
+ax3.set_ylim([0, 105])
+ax3.grid(True, alpha=0.3)
+ax3.legend()
+
+ax4.set_xlabel('Number of Threads')
+ax4.set_ylabel('Total Requests')
+ax4.set_title('Total Requests vs Concurrency')
+ax4.grid(True, alpha=0.3)
+ax4.legend()
 
 plt.tight_layout()
 plt.savefig('load_test_results.png', dpi=300, bbox_inches='tight')

@@ -23,7 +23,7 @@ int main() {
     ServerConfig sc;
     sc.host = env("SRV_HOST", "0.0.0.0");
     sc.port = env_int("SRV_PORT", 8080);
-    sc.cache_capacity = env_size("CACHE_CAP", 10000);
+    sc.cache_capacity = env_size("CACHE_CAP", 1000);
     sc.threads = env_int("SRV_THREADS", std::thread::hardware_concurrency());
 
     // --- DB Config ---
@@ -31,7 +31,7 @@ int main() {
     dc.host = env("DB_HOST", "127.0.0.1");
     dc.port = env("DB_PORT", "5432");
     dc.user = env("DB_USER", "postgres");
-    dc.password = env("DB_PASS", "");
+    dc.password = env("DB_PASS", "postgres123");
     dc.dbname = env("DB_NAME", "kvdb");
 
     KVServer server(sc, dc);

@@ -6,7 +6,7 @@ OUTPUT_CSV="load_test_results.csv"
 SERVER_HOST="127.0.0.1"
 SERVER_PORT="8080"
 TEST_DURATION=30 # seconds per test
-WORKLOAD_TYPE="get_popular"  # Options: get_all, put_all, get_popular, get_put
+WORKLOAD_TYPE="put_all"  # Options: get_all, put_all, get_popular, get_put
 
 # Check if load generator binary exists
 if [ ! -f "$LOAD_GEN" ]; then

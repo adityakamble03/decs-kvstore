@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.16)
 project(decs_project LANGUAGES CXX)
 
+add_definitions(-DCPPHTTPLIB_THREAD_POOL_COUNT=8)
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
@@ -26,3 +28,5 @@ target_link_libraries(kvserver PRIVATE kvlib)
 
 add_executable(loadgen src/loadgen_main.cpp)
 target_link_libraries(loadgen PRIVATE kvlib)
+
+
